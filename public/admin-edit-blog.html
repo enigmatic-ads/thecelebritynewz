@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/images/icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Blog</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Edit Blog</h2>
+    <form id="editBlogForm">
+      <input type="hidden" id="blogId" />
+
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Image URL</label>
+        <input type="text" class="form-control" id="image" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="summary" class="form-label">Summary</label>
+        <textarea class="form-control" id="summary" rows="3" required></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <!-- TinyMCE Editor -->
+        <textarea id="editor"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Categories</label><br />
+        <div class="form-check form-check-inline">
+          <input class="form-check-input category-checkbox" type="checkbox" value="Tech News" id="cat1">
+          <label class="form-check-label" for="cat1">Tech News</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input category-checkbox" type="checkbox" value="Gadget Reviews" id="cat2">
+          <label class="form-check-label" for="cat2">Gadget Reviews</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input category-checkbox" type="checkbox" value="How To Guides" id="cat3">
+          <label class="form-check-label" for="cat3">How To Guides</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input category-checkbox" type="checkbox" value="Future Tech" id="cat4">
+          <label class="form-check-label" for="cat4">Future Tech</label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="slug" class="form-label">URL Slug</label>
+        <input type="text" class="form-control" id="slug" required />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+      <a href="admin-dashboard.html" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+
+  <!-- TinyMCE -->
+   <script src="https://cdn.tiny.cloud/1/0cs91s6vtnabifnqn7entz26k8icrwh6ke0ucut7a9r75n9h/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+    let blogContent = '';
+    
+    tinymce.init({
+      selector: '#editor',
+      plugins: 'link image code lists',
+      toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | link code',
+      menubar: false,
+      height: 300,
+      setup: function (editor) {
+        editor.on('init', function () {
+          if (blogContent) {
+            editor.setContent(blogContent);
+          }
+        });
+  }
+    });
+  </script>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const blogId = params.get('id');
+    let blog;
+
+    fetch('posts.json')
+      .then(res => res.json())
+      .then(posts => {
+        blog = posts.find(b => b.id == blogId);
+        if (!blog) {
+          alert('Blog not found.');
+          return;
+        }
+
+        document.getElementById('blogId').value = blog.id;
+        document.getElementById('title').value = blog.title;
+        document.getElementById('image').value = blog.image;
+        document.getElementById('summary').value = blog.summary;
+        document.getElementById('slug').value = blog.slug || '';
+
+        const selectedCategories = blog.categories || [];
+        document.querySelectorAll('.category-checkbox').forEach(cb => {
+          if (selectedCategories.includes(cb.value)) cb.checked = true;
+        });
+
+        blogContent = blog.content || '';
+      });
+
+    document.getElementById('editBlogForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const selectedCategories = Array.from(document.querySelectorAll('.category-checkbox:checked'))
+                                      .map(cb => cb.value);
+
+      let content = tinymce.get('editor').getContent();
+      content = content
+        .replace(/<p[^>]*>/gi, '')
+        .replace(/<\/p>/gi, '<br>')
+        .replace(/<span[^>]*>/gi, '')
+        .replace(/<\/span>/gi, '');
+
+      const updatedBlog = {
+        id: parseInt(document.getElementById('blogId').value),
+        title: document.getElementById('title').value,
+        image: document.getElementById('image').value,
+        summary: document.getElementById('summary').value,
+        content,
+        categories: selectedCategories,
+        slug: document.getElementById('slug').value,
+        date: blog.date
+      };
+
+      const response = await fetch(`/api/blogs/${updatedBlog.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify(updatedBlog),
+      });
+
+      if (response.ok) {
+        alert('Blog updated successfully!');
+        window.location.href = 'admin-dashboard.html';
+      } else {
+        alert('Error updating blog.');
+      }
+    });
+  </script>
+</body>
+</html>

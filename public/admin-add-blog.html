@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="assets/images/icon.png">
+  <title>Add New Blog</title>
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- TinyMCE -->
+   <script src="https://cdn.tiny.cloud/1/0cs91s6vtnabifnqn7entz26k8icrwh6ke0ucut7a9r75n9h/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+
+  <style>
+    body { padding: 2rem; }
+    textarea { resize: vertical; }
+  </style>
+</head>
+<body>
+  <script>
+    async function verifyAuth() {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        window.location.href = '/';
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/verify-token', {
+          method: 'GET',
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (!response.ok) {
+          localStorage.removeItem('token');
+          window.location.href = '/';
+        }
+      } catch (err) {
+        console.error('Token verification failed:', err);
+        localStorage.removeItem('token');
+        window.location.href = '/';
+      }
+    }
+
+    verifyAuth();
+  </script>
+
+  <div class="mr-4">
+    <a href="admin-dashboard.html" class="btn btn-primary">Back</a>
+  </div>
+
+  <div class="container">
+    <h2>Add New Blog</h2>
+    <form id="blogForm" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input id="title" class="form-control" required />
+      </div>
+      <div class="form-group">
+        <label for="image">Upload Image</label>
+        <input id="image" type="file" class="form-control" accept="image/*" required />
+      </div>
+      <div class="form-group">
+        <label for="summary">Summary</label>
+        <textarea id="summary" class="form-control" rows="2" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea id="editor"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Categories</label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input category-checkbox" type="checkbox" value="News" id="cat1">
+            <label class="form-check-label" for="cat1">News</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input category-checkbox" type="checkbox" value="Movie" id="cat2">
+            <label class="form-check-label" for="cat2">Movie</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input category-checkbox" type="checkbox" value="Music" id="cat3">
+            <label class="form-check-label" for="cat3">Music</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input category-checkbox" type="checkbox" value="TV" id="cat4">
+            <label class="form-check-label" for="cat4">TV</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input category-checkbox" type="checkbox" value="Awards" id="cat5">
+            <label class="form-check-label" for="cat5">Awards</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Blog</button>
+      <a href="admin-dashboard.html" class="btn btn-primary">Cancel</a>
+    </form>
+    <div id="message" class="mt-3"></div>
+  </div>
+
+  <script>
+    //Initialize TinyMCE
+    tinymce.init({
+      selector: '#editor',
+      height: 800,
+      menubar: false,
+      plugins: 'link image code lists',
+      toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | link code',
+      placeholder: 'Write your blog content here...',
+      setup: function (editor) {
+        editor.on('GetContent', function (e) {
+          // Strip out data-* attributes right before content is retrieved
+          e.content = e.content.replace(/\sdata-[a-z-]+="[^"]*"/g, '');
+        });
+      }
+    });
+
+    // Handle form submit
+    document.getElementById("blogForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const title = document.getElementById("title").value;
+      const summary = document.getElementById("summary").value;
+      let content = tinymce.get('editor').getContent();
+      content = content
+        .replace(/<p[^>]*>/gi, '')
+        .replace(/<\/p>/gi, '<br>')
+        .replace(/<span[^>]*>/gi, '')
+        .replace(/<\/span>/gi, '');
+
+      const imageFile = document.getElementById("image").files[0];
+      const selectedCategory = document.querySelector('.category-checkbox:checked')?.value || '';
+
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("summary", summary);
+      formData.append("content", content);
+      formData.append("image", imageFile);
+      formData.append("category", selectedCategory);
+
+      const response = await fetch("/add-post", {
+        method: "POST",
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: formData
+      });
+
+      const result = await response.json();
+      if (result.status === "success") {
+        alert("Blog post saved!");
+        window.location.href = "admin-dashboard.html";
+      } else {
+        alert("Failed to save post.");
+      }
+    });
+
+    document.querySelectorAll('.category-checkbox').forEach(cb => {
+      cb.addEventListener('change', function () {
+        if (this.checked) {
+          document.querySelectorAll('.category-checkbox').forEach(other => {
+            if (other !== this) other.checked = false; // Uncheck others
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

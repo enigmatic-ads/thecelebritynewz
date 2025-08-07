@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Single Post - ZenBlog Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  
+</head>
+
+<body class="single-post-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/images/logo.png" alt="">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/category/news">News</a></li>
+          <li><a href="/category/movie">Movie</a></li>
+          <li><a href="/category/music">Music</a></li>
+          <li><a href="/category/tv">TV</a></li>
+          <li><a href="/category/awards">Awards</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0" id="breadcrumb-category">
+          <a href="/">Home</a> / <a href="/blogs">Blogs</a> / <span></span>
+        </h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li class="current">Single Post</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8">
+
+          <!-- Blog Details Section -->
+          <section id="blog-details" class="blog-details section">
+            <div class="container">
+              <article class="article" id="post-detail"></article>
+            </div>
+          </section>
+
+          <!-- Blog Comments Section -->
+          <section id="blog-comments" class="blog-comments section">
+            <div class="container">
+              <h4 class="comments-count" id="comments-count">No comments yet</h4>
+              <div id="comments-container"></div>
+            </div>
+          </section>
+
+          <!-- Comment Form Section -->
+          <section id="comment-form" class="comment-form section">
+            <div class="container">
+              <form id="commentForm">
+                <h4>Post Comment</h4>
+                <p>Your email address will not be published. Required fields are marked * </p>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input name="name" type="text" class="form-control" placeholder="Your Name*" required>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <input name="email" type="email" class="form-control" placeholder="Your Email*" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col form-group">
+                    <textarea name="comment" class="form-control" placeholder="Your Comment*" required></textarea>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Post Comment</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+
+
+        <div class="col-lg-4 sidebar">
+
+          <div class="widgets-container">
+
+            <!-- Search Widget -->
+            <div class="search-widget widget-item">
+
+              <h3 class="widget-title">Search</h3>
+              <form action="">
+                <input type="text">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+              </form>
+
+            </div><!--/Search Widget -->
+
+            <!-- Recent Posts Widget -->
+            <div class="recent-posts-widget widget-item">
+              <h3 class="widget-title">Recent Posts</h3>
+              <div id="recent-posts"></div>
+            </div>
+            <!--/Recent Posts Widget -->
+
+            <!-- Tags Widget -->
+            <div class="tags-widget widget-item">
+
+              <h3 class="widget-title">Tags</h3>
+              <ul>
+                <li><a href="/category/news">News</a></li>
+                <li><a href="/category/movie">Movie</a></li>
+                <li><a href="/category/music">Music</a></li>
+                <li><a href="/category/tv">TV</a></li>
+                <li><a href="/category/awards">Awards</a></li>
+              </ul>
+
+            </div><!--/Tags Widget -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="/" class="logo d-flex align-items-center">
+            <img src="assets/images/logo.png" alt="">
+          </a>
+          <div class="footer-contact pt-3">
+            <p>At TheCelebrityNewz, we’re passionate about the stories behind the spotlight. From red carpet moments to behind-the-scenes drama, from emerging talents to iconic legends—we bring you the latest and most exciting updates from the world of celebrities, movies, music, and tv.</p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 offset-lg-1 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/blogs">Blogs</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Our Categories</h4>
+          <ul>
+            <li><a href="/category/news">News</a></li>
+            <li><a href="/category/movie">Movie</a></li>
+            <li><a href="/category/music">Music</a></li>
+            <li><a href="/category/tv">TV</a></li>
+            <li><a href="/category/awards">Awards</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p><span>Copyright &copy;<script>document.write(new Date().getFullYear());</script> TheCelebrityNewz | All rights reserved</span></p>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const postSlug = window.location.pathname.split('/').pop();
+      const postDetailContainer = document.getElementById('post-detail');
+      const commentsContainer = document.getElementById('comments-container');
+      const commentsCount = document.getElementById('comments-count');
+
+      try {
+        const response = await fetch('/posts.json');
+        const posts = await response.json();
+        const post = posts.find(p => p.slug === postSlug);
+
+        if (!post) {
+          postDetailContainer.innerHTML = '<p>Post not found.</p>';
+          return;
+        }
+
+        document.querySelector('#breadcrumb-category span').innerHTML = `<a href="/category/${post.categorySlug}">${post.category}</a>`;
+
+        // Render Post Details
+        postDetailContainer.innerHTML = `
+          <div class="post-img">
+            <img src="${post.image}" alt="${post.title}" class="img-fluid">
+          </div>
+          <h2 class="title">${post.title}</h2>
+          <div class="meta-top">
+            <ul>
+              <li><i class="bi bi-folder"></i> ${post.category}</li>
+            </ul>
+          </div>
+          <div class="content">${post.content}</div>
+        `;
+
+        // Render Comments
+        if (post.comments && post.comments.length > 0) {
+          commentsCount.textContent = `${post.comments.length} Comment(s)`;
+          commentsContainer.innerHTML = post.comments.map(c => `
+            <div class="comment">
+              <div class="d-flex">
+                <div>
+                  <h5>${c.name}</h5>
+                  <time>${c.date}</time>
+                  <p>${c.comment}</p>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        } 
+
+        // Handle Comment Form
+        document.getElementById('commentForm').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const formData = new FormData(e.target);
+          const commentData = Object.fromEntries(formData.entries());
+          commentData.date = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+          const res = await fetch(`/api/add-comment`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ slug: post.slug, comment: commentData })
+          });
+
+          if (res.ok) {
+            alert('Comment added!');
+            location.reload();
+          } else {
+            alert('Failed to add comment.');
+          }
+        });
+      } catch (error) {
+        console.error('Error loading post:', error);
+      }
+    });
+    </script>
+
+    <script>
+    const recentPostsIds = [8, 6, 3, 4, 5];
+
+    async function loadRecentPosts() {
+      try {
+        const response = await fetch('/posts.json');
+        const posts = await response.json();
+
+        const container = document.getElementById('recent-posts');
+        container.innerHTML = '';
+
+        recentPostsIds.forEach(postId => {
+          const post = posts.find(p => p.id === postId);
+          if (post) {
+            const postItem = document.createElement('div');
+            postItem.className = 'post-item';
+
+            postItem.innerHTML = `
+              <img src="/${post.image}" alt="" class="flex-shrink-0">
+              <div>
+                <h4><a href="/${post.slug}">${post.title}</a></h4>
+              </div>
+            `;
+
+            container.appendChild(postItem);
+          }
+        });
+      } catch (error) {
+        console.error('Error loading recent posts:', error);
+      }
+    }
+
+    loadRecentPosts();
+  </script>
+    
+</body>
+
+</html>

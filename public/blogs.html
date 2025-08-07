@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Category - ZenBlog Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/assets/css/main.css" rel="stylesheet">
+
+  
+</head>
+
+<body class="category-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="/assets/images/logo.png" alt="">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/category/news">News</a></li>
+          <li><a href="/category/movie">Movie</a></li>
+          <li><a href="/category/music">Music</a></li>
+          <li><a href="/category/tv">TV</a></li>
+          <li><a href="/category/awards">Awards</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title position-relative">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0" id="breadcrumb-category">
+          <a href="/">Home</a> / <a href="/blogs">Blogs</a> <span></span>
+        </h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li class="current">Categories</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8">
+
+          <!-- Blog Posts Section -->
+          <section id="blog-posts" class="blog-posts section">
+            <div class="container">
+              <div class="row gy-4" id="blogPostsContainer">
+                <!-- Dynamic posts will load here -->
+              </div>
+            </div>
+          </section><!-- /Blog Posts Section -->
+
+          <!-- Blog Pagination Section -->
+          <section id="blog-pagination" class="blog-pagination section">
+            <div class="container">
+              <div class="d-flex justify-content-center">
+                <ul id="paginationContainer">
+                  <!-- Pagination links load here -->
+                </ul>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <div class="col-lg-4 sidebar">
+
+          <div class="widgets-container">
+
+            <!-- Search Widget -->
+            <div class="search-widget widget-item">
+
+              <h3 class="widget-title">Search</h3>
+              <form action="">
+                <input type="text">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+              </form>
+
+            </div><!--/Search Widget -->
+
+            <!-- Recent Posts Widget -->
+            <div class="recent-posts-widget widget-item">
+              <h3 class="widget-title">Recent Posts</h3>
+              <div id="recent-posts"></div>
+            </div>
+            <!--/Recent Posts Widget -->
+
+            <!-- Tags Widget -->
+            <div class="tags-widget widget-item">
+
+              <h3 class="widget-title">Tags</h3>
+              <ul>
+                <li><a href="/category/news">News</a></li>
+                <li><a href="/category/movie">Movie</a></li>
+                <li><a href="/category/music">Music</a></li>
+                <li><a href="/category/tv">TV</a></li>
+                <li><a href="/category/awards">Awards</a></li>
+              </ul>
+
+            </div><!--/Tags Widget -->
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="/" class="logo d-flex align-items-center">
+            <img src="assets/images/logo.png" alt="">
+          </a>
+          <div class="footer-contact pt-3">
+            <p>At TheCelebrityNewz, we’re passionate about the stories behind the spotlight. From red carpet moments to behind-the-scenes drama, from emerging talents to iconic legends—we bring you the latest and most exciting updates from the world of celebrities, movies, music, and tv.</p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 offset-lg-1 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/blogs">Blogs</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Our Categories</h4>
+          <ul>
+              <li><a href="/category/news">News</a></li>
+              <li><a href="/category/movie">Movie</a></li>
+              <li><a href="/category/music">Music</a></li>
+              <li><a href="/category/tv">TV</a></li>
+              <li><a href="/category/awards">Awards</a></li>
+            </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p><span>Copyright &copy;<script>document.write(new Date().getFullYear());</script> TheCelebrityNewz | All rights reserved</span></p>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/assets/js/main.js"></script>
+
+  <script>
+    const POSTS_PER_PAGE = 6;
+    let currentPage = 1;
+    let filteredPosts = [];
+
+    async function loadBlogPosts() {
+      try {
+        const response = await fetch('/posts.json');
+        const posts = await response.json();
+
+        // Determine if we're on /blogs or /category/xyz
+        const path = window.location.pathname;
+        const pathSegments = path.split('/').filter(Boolean);
+
+        if (pathSegments[0] === 'blogs') {
+          filteredPosts = posts; // All posts
+          document.querySelector('#breadcrumb-category span').innerHTML = "";
+        } else if (pathSegments[0] === 'category' && pathSegments[1]) {
+          filteredPosts = posts.filter(post => post.categorySlug === pathSegments[1]);
+          document.querySelector('#breadcrumb-category span').innerHTML = `<a href="/category/${filteredPosts[0].categorySlug}">/${filteredPosts[0].category}</a>`;
+        }
+
+        renderPosts();
+        renderPagination();
+      } catch (error) {
+        console.error('Error loading posts:', error);
+      }
+    }
+
+    function renderPosts() {
+      const container = document.getElementById('blogPostsContainer');
+      container.innerHTML = '';
+
+      const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+      const endIndex = startIndex + POSTS_PER_PAGE;
+      const pagePosts = filteredPosts.slice(startIndex, endIndex);
+
+      if (pagePosts.length === 0) {
+        container.innerHTML = `<p>No posts found.</p>`;
+        return;
+      }
+
+      pagePosts.forEach(post => {
+        const postHTML = `
+          <div class="col-lg-6">
+            <article class="position-relative h-100">
+              <div class="post-img position-relative overflow-hidden">
+                <img src="/${post.image}" class="img-fluid" alt="${post.title}">
+                <span class="post-date">${post.date}</span>
+              </div>
+              <div class="post-content d-flex flex-column">
+                <h3 class="post-title">${post.title}</h3>
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">${post.category}</span>
+                  </div>
+                </div>
+                <p>${post.summary || ''}</p>
+                <hr>
+                <a href="/${post.slug}" class="readmore stretched-link">
+                  <span>Read More</span><i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        `;
+        container.innerHTML += postHTML;
+      });
+    }
+
+    function renderPagination() {
+      const paginationContainer = document.getElementById('paginationContainer');
+      paginationContainer.innerHTML = '';
+
+      const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+      if (totalPages <= 1) return; // No pagination needed if only one page
+
+      // Previous button
+      paginationContainer.innerHTML += `
+        <li><a href="#" onclick="changePage(${currentPage - 1}); return false;"><i class="bi bi-chevron-left"></i></a></li>
+      `;
+
+      for (let i = 1; i <= totalPages; i++) {
+        paginationContainer.innerHTML += `
+          <li><a href="#" class="${i === currentPage ? 'active' : ''}" onclick="changePage(${i}); return false;">${i}</a></li>
+        `;
+      }
+
+      // Next button
+      paginationContainer.innerHTML += `
+        <li><a href="#" onclick="changePage(${currentPage + 1}); return false;"><i class="bi bi-chevron-right"></i></a></li>
+      `;
+    }
+
+    function changePage(page) {
+      const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+      if (page < 1 || page > totalPages) return;
+      currentPage = page;
+      renderPosts();
+      renderPagination();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadBlogPosts);
+  </script>
+
+  <script>
+    const recentPostsIds = [8, 6, 3, 4, 5];
+
+    async function loadRecentPosts() {
+      try {
+        const response = await fetch('/posts.json');
+        const posts = await response.json();
+
+        const container = document.getElementById('recent-posts');
+        container.innerHTML = '';
+
+        recentPostsIds.forEach(postId => {
+          const post = posts.find(p => p.id === postId);
+          if (post) {
+            const postItem = document.createElement('div');
+            postItem.className = 'post-item';
+
+            postItem.innerHTML = `
+              <img src="/${post.image}" alt="" class="flex-shrink-0">
+              <div>
+                <h4><a href="/${post.slug}">${post.title}</a></h4>
+              </div>
+            `;
+
+            container.appendChild(postItem);
+          }
+        });
+      } catch (error) {
+        console.error('Error loading recent posts:', error);
+      }
+    }
+
+    loadRecentPosts();
+  </script>
+
+
+</body>
+
+</html>

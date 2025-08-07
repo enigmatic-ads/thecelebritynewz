@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - ZenBlog Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/images/logo.png" alt="">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="category/news">News</a></li>
+          <li><a href="category/movie">Movie</a></li>
+          <li><a href="category/music">Music</a></li>
+          <li><a href="category/tv">TV</a></li>
+          <li><a href="category/awards">Awards</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Slider Section -->
+    <section id="slider" class="slider section dark-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "centeredSlides": true,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              }
+            }
+          </script>
+
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide" style="background-image: url('assets/images/slide-1.webp');">
+              <div class="content">
+                <h2><a href="/vegas-oddsmakers-say-aaron-taylor-johnson-will-be-the-next-james-bond-dont-bet-on-it">Vegas Oddsmakers Say Aaron Taylor-Johnson Will Be the Next James Bond. Don’t Bet on It.</a></h2>
+              </div>
+            </div>
+
+            <div class="swiper-slide" style="background-image: url('assets/images/slide-2.webp');">
+              <div class="content">
+                <h2><a href="/bbc-decides-to-air-latest-masterchef-series-with-now-axed-hosts-gregg-wallace-and-john-torode">BBC Decides to Air Latest ‘MasterChef’ Series With Now-Axed Hosts Gregg Wallace and John Torode</a></h2>
+              </div>
+            </div>
+
+            <div class="swiper-slide" style="background-image: url('assets/images/slide-3.webp');">
+              <div class="content">
+                <h2><a href="/mark-ruffalo-returning-as-the-hulk-for-spider-man-4">Mark Ruffalo Returning as the Hulk for ‘Spider-Man 4’</a></h2>
+              </div>
+            </div>
+
+            <div class="swiper-slide" style="background-image: url('assets/images/slide-4.webp');">
+              <div class="content">
+                <h2><a href="/freakier-friday-review-jamie-lee-curtis-and-lindsay-lohan-struggle-to-rekindle-the-body-swap-magic-in-shrill-freakquel">‘Freakier Friday’ Review: Jamie Lee Curtis and Lindsay Lohan Struggle to Rekindle the Body-Swap Magic in Shrill “Freakquel”</a></h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- /Slider Section -->
+
+
+    <!-- Trending Category Section -->
+    <section id="trending-category" class="trending-category section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-5">
+
+          <!-- Left Large Post -->
+          <div class="col-lg-4" id="leftPostContainer"></div>
+
+          <!-- Middle Two Columns -->
+          <div class="col-lg-8">
+            <div class="row g-5">
+              <div class="col-lg-4 border-start custom-border" id="middleCol1"></div>
+              <div class="col-lg-4 border-start custom-border" id="middleCol2"></div>
+
+              <!-- Trending Section -->
+              <div class="col-lg-4">
+                <div class="trending">
+                  <h3>Trending</h3>
+                  <ul class="trending-post" id="trendingPostsList"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /Trending Category Section -->
+
+
+    <!-- NEWS Category Section -->
+    <section id="news-category" class="news-category section">
+      <div class="container section-title" data-aos="fade-up">
+        <div class="section-title-container d-flex align-items-center justify-content-between">
+          <h2>News</h2>
+          <p><a href="category/news">See All</a></p>
+        </div>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-md-9">
+            <!-- Featured Post -->
+            <div id="designMainPost"></div>
+
+            <div class="row mt-4">
+              <!-- Left Column -->
+              <div class="col-lg-4" id="designLeftColumn"></div>
+
+              <!-- Middle Column -->
+              <div class="col-lg-8" id="designMiddleColumn"></div>
+            </div>
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="col-md-3" id="designRightColumn"></div>
+        </div>
+      </div>
+    </section>
+    <!-- /Design Category Section -->
+
+
+    <!-- Movies Category Section -->
+    <section id="movie-category" class="movie-category section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <div class="section-title-container d-flex align-items-center justify-content-between">
+          <h2>Movie</h2>
+          <p><a href="category/movie">See All</a></p>
+        </div>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <!-- Main Content Area -->
+          <div class="col-md-9 order-md-2">
+            <!-- Main Featured Post -->
+            <div id="movieMainPost"></div>
+
+            <!-- Two-column row -->
+            <div class="row mt-4">
+              <!-- Left Column -->
+              <div class="col-lg-4" id="movieLeftColumn"></div>
+              <!-- Middle Column -->
+              <div class="col-lg-8" id="movieMiddleColumn"></div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-md-3" id="movieRightColumn"></div>
+        </div>
+      </div>
+    </section>
+    <!-- /Business Category Section -->
+
+
+    <!-- MUSIC Category Section -->
+    <section id="music-category" class="music-category section">
+      <div class="container section-title" data-aos="fade-up">
+        <div class="section-title-container d-flex align-items-center justify-content-between">
+          <h2>Music</h2>
+          <p><a href="category/music">See All</a></p>
+        </div>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-5">
+          <!-- Left Column -->
+          <div class="col-lg-4" id="musicLeftColumn"></div>
+          <!-- Middle Columns -->
+          <div class="col-lg-8">
+            <div class="row g-5">
+              <div class="col-lg-4 border-start custom-border" id="musicMiddleColumnOne"></div>
+              <div class="col-lg-4 border-start custom-border" id="musicMiddleColumnTwo"></div>
+              <div class="col-lg-4" id="musicRightColumn"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- /music Category Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="/" class="logo d-flex align-items-center">
+            <img src="assets/images/logo.png" alt="">
+          </a>
+          <div class="footer-contact pt-3">
+            <p>At TheCelebrityNewz, we’re passionate about the stories behind the spotlight. From red carpet moments to behind-the-scenes drama, from emerging talents to iconic legends—we bring you the latest and most exciting updates from the world of celebrities, movies, music, and tv.</p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 offset-lg-1 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blogs">Blogs</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/cookie-policy">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Our Categories</h4>
+          <ul>
+            <li><a href="/category/news">News</a></li>
+            <li><a href="/category/movie">Movie</a></li>
+            <li><a href="/category/music">Music</a></li>
+            <li><a href="/category/tv">TV</a></li>
+            <li><a href="/category/awards">Awards</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p><span>Copyright &copy;<script>document.write(new Date().getFullYear());</script> TheCelebrityNewz | All rights reserved</span></p>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Define arrays for each section
+    const leftPostId = 1; // Single big post
+    const middleCol1Ids = [10, 20, 32]; // First middle column
+    const middleCol2Ids = [15, 25, 29]; // Second middle column
+    const trendingPostsIds = [26, 2, 11, 30, 36, 18]; // Trending list on right
+
+    async function loadTrendingCategory() {
+      try {
+        const response = await fetch('posts.json');
+        const posts = await response.json();
+
+        // Get containers
+        const leftContainer = document.getElementById('leftPostContainer');
+        const col1 = document.getElementById('middleCol1');
+        const col2 = document.getElementById('middleCol2');
+        const trendingList = document.getElementById('trendingPostsList');
+
+        // Clear existing
+        leftContainer.innerHTML = '';
+        col1.innerHTML = '';
+        col2.innerHTML = '';
+        trendingList.innerHTML = '';
+
+        // Helper to get post by ID
+        const getPostById = (id) => posts.find(post => post.id === id);
+
+        // 1. Left Big Post
+        const leftPost = getPostById(leftPostId);
+        if (leftPost) {
+          leftContainer.innerHTML = `
+            <div class="post-entry lg left-post">
+              <a href="/${leftPost.slug}">
+                <img src="${leftPost.image}" alt="${leftPost.title}" class="img-fluid">
+              </a>
+              <div class="post-meta">
+                <span class="date">${leftPost.category}</span> <span class="mx-1">•</span> <span>${leftPost.date}</span>
+              </div>
+              <h2><a href="/${leftPost.slug}">${leftPost.title}</a></h2>
+              <p class="mb-4 d-block">The pleasing back-to-basics feel in The Fantastic Four: First Steps suggests Marvel has learned valuable lessons from its recent box office underperformers. There’s a fresh willingness to prioritize character over the usual barrage of interchangeable CG action sequences that often overwhelm them, instead giving us relatable folks to invest in. Equally important is the decision to make this a legitimate stand-alone requiring no homework. The expectation that audiences would have intimate knowledge of a sprawling multiverse covered in a glut of features and TV series no doubt contributed to the perception of genre fatigue.</p>
+            </div>
+          `;
+        }
+
+        // 2. Middle Column 1
+        middleCol1Ids.forEach(id => {
+          const post = getPostById(id);
+          if (post) {
+            col1.innerHTML += `
+              <div class="post-entry">
+                <a href="/${post.slug}">
+                  <img src="${post.image}" alt="${post.title}" class="img-fluid">
+                </a>
+                <div class="post-meta">
+                  <span class="date">${post.category}</span> <span class="mx-1">•</span> <span>${post.date}</span>
+                </div>
+                <h2><a href="/${post.slug}">${post.title}</a></h2>
+              </div>
+            `;
+          }
+        });
+
+        // 3. Middle Column 2
+        middleCol2Ids.forEach(id => {
+          const post = getPostById(id);
+          if (post) {
+            col2.innerHTML += `
+              <div class="post-entry">
+                <a href="/${post.slug}">
+                  <img src="${post.image}" alt="${post.title}" class="img-fluid">
+                </a>
+                <div class="post-meta">
+                  <span class="date">${post.category}</span> <span class="mx-1">•</span> <span>${post.date}</span>
+                </div>
+                <h2><a href="/${post.slug}">${post.title}</a></h2>
+              </div>
+            `;
+          }
+        });
+
+        // 4. Trending List
+        trendingPostsIds.forEach((id, index) => {
+          const post = getPostById(id);
+          if (post) {
+            const li = document.createElement('li');
+            li.innerHTML = `
+              <a href="/${post.slug}">
+                <span class="number">${index + 1}</span>
+                <h3>${post.title}</h3>
+              </a>
+            `;
+            trendingList.appendChild(li);
+          }
+        });
+
+      } catch (error) {
+        console.error('Error loading posts:', error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadTrendingCategory);
+  </script>
+
+  <script>
+  const designMainPostId = 5; // Big main post
+  const designLeftColumnIds = [6, 7]; // Two small posts in left column
+  const designMiddleColumnId = 8; // One post in middle
+  const designRightPostIds = [9, 10, 11, 12, 13, 14, 15]; // Sidebar posts
+
+  async function loadDesignSection() {
+    try {
+      const response = await fetch('posts.json');
+      const posts = await response.json();
+
+      const getPostById = (id) => posts.find(post => post.id === id);
+
+      const mainContainer = document.getElementById('designMainPost');
+      const leftContainer = document.getElementById('designLeftColumn');
+      const middleContainer = document.getElementById('designMiddleColumn');
+      const rightContainer = document.getElementById('designRightColumn');
+
+      // Clear old content
+      mainContainer.innerHTML = '';
+      leftContainer.innerHTML = '';
+      middleContainer.innerHTML = '';
+      rightContainer.innerHTML = '';
+
+      // Main Featured Post
+      const mainPost = getPostById(designMainPostId);
+      if (mainPost) {
+        mainContainer.innerHTML = `
+          <div class="d-lg-flex post-entry">
+            <a href="/${mainPost.slug}" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
+              <img src="${mainPost.image}" alt="${mainPost.title}" class="img-fluid">
+            </a>
+            <div>
+              <div class="post-meta"><span class="date">${mainPost.category}</span> <span class="mx-1">•</span> <span>${mainPost.date}</span></div>
+              <h3><${mainPost.slug}">${mainPost.title}</a></h3>
+              <p>${mainPost.summary || ''}</p>
+            </div>
+          </div>
+        `;
+      }
+
+      // Left Column
+      designLeftColumnIds.forEach((id, index) => {
+        const post = getPostById(id);
+        if (post) {
+          const isLast = index === designLeftColumnIds.length - 1; // Check if last item
+          leftContainer.innerHTML += `
+            <div class="post-list border-bottom">
+              ${!isLast ? `
+                <a href="/${post.slug}">
+                  <img src="${post.image}" alt="${post.title}" class="img-fluid">
+                </a>` : ''}
+              <div class="post-meta">
+                <span class="date">${post.category}</span>
+                <span class="mx-1">•</span>
+                <span>${post.date}</span>
+              </div>
+              <h2 class="mb-2"><a href="${post.slug}">${post.title}</a></h2>
+              <p class="mb-4 d-block">${post.summary || ''}</p>
+            </div>
+          `;
+        }
+      });
+
+      // Middle Column
+      const middlePost = getPostById(designMiddleColumnId);
+      if (middlePost) {
+        middleContainer.innerHTML = `
+          <div class="post-list">
+            <a href="/${middlePost.slug}">
+              <img src="${middlePost.image}" alt="${middlePost.title}" class="img-fluid">
+            </a>
+            <div class="post-meta"><span class="date">${middlePost.category}</span> <span class="mx-1">•</span> <span>${middlePost.date}</span></div>
+            <h2 class="mb-2"><a href="${middlePost.slug}">${middlePost.title}</a></h2>
+            <span class="author mb-3 d-block">${middlePost.author}</span>
+            <p class="mb-4 d-block">${middlePost.summary || ''}</p>
+          </div>
+        `;
+      }
+
+      // Right Sidebar
+      designRightPostIds.forEach(id => {
+        const post = getPostById(id);
+        if (post) {
+          rightContainer.innerHTML += `
+            <div class="post-list border-bottom">
+              <div class="post-meta"><span class="date">${post.category}</span> <span class="mx-1">•</span> <span>${post.date}</span></div>
+              <h2 class="mb-2"><a href="/${post.slug}">${post.title}</a></h2>
+            </div>
+          `;
+        }
+      });
+
+    } catch (error) {
+      console.error('Error loading Design section:', error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadDesignSection);
+</script>
+
+    <script>
+      // Define arrays for this section
+      const movieMainPostId = 1;
+      const movieLeftColumnIds = [2, 3];
+      const movieMiddleColumnId = 4;
+      const movieRightPostIds = [16, 17, 18, 19, 20, 21];
+
+      async function loadmovieSection() {
+        try {
+          const response = await fetch('posts.json');
+          const posts = await response.json();
+          const getPostById = (id) => posts.find(post => post.id === id);
+
+          // Containers
+          const mainContainer = document.getElementById('movieMainPost');
+          const leftContainer = document.getElementById('movieLeftColumn');
+          const middleContainer = document.getElementById('movieMiddleColumn');
+          const rightContainer = document.getElementById('movieRightColumn');
+
+          mainContainer.innerHTML = '';
+          leftContainer.innerHTML = '';
+          middleContainer.innerHTML = '';
+          rightContainer.innerHTML = '';
+
+          // Main Featured Post
+          const mainPost = getPostById(movieMainPostId);
+          if (mainPost) {
+            mainContainer.innerHTML = `
+              <div class="d-lg-flex post-entry">
+                <a href="/${mainPost.slug}" class="me-4 thumbnail d-inline-block mb-4 mb-lg-0">
+                  <img src="${mainPost.image}" alt="${mainPost.title}" class="img-fluid">
+                </a>
+                <div>
+                  <div class="post-meta">
+                    <span class="date">${mainPost.category}</span>
+                    <span class="mx-1">•</span>
+                    <span>${mainPost.date}</span>
+                  </div>
+                  <h3><a href="/${mainPost.slug}">${mainPost.title}</a></h3>
+                  <p>${mainPost.summary || ''}</p>
+                  <div class="d-flex align-items-center author" style="visibility:hidden;">
+                    <div class="photo"><img src="assets/img/person-placeholder.jpg" alt="" class="img-fluid"></div>
+                    <div class="name">
+                      <h3 class="m-0 p-0">&nbsp;</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+
+          // Left Column (2 posts, last without image)
+          movieLeftColumnIds.forEach((id, index) => {
+            const post = getPostById(id);
+            if (post) {
+              const isLast = index === movieLeftColumnIds.length - 1;
+              leftContainer.innerHTML += `
+                <div class="post-list ${!isLast ? 'border-bottom' : ''}">
+                  ${!isLast ? `
+                    <a href="/${post.slug}">
+                      <img src="${post.image}" alt="${post.title}" class="img-fluid">
+                    </a>` : ''}
+                  <div class="post-meta">
+                    <span class="date">${post.category}</span>
+                    <span class="mx-1">•</span>
+                    <span>${post.date}</span>
+                  </div>
+                  <h2 class="mb-2"><a href="/${post.slug}">${post.title}</a></h2>
+                  <span class="author mb-3 d-block" style="visibility:hidden;">&nbsp;</span>
+                  ${!isLast ? `<p class="mb-4 d-block">${post.summary || ''}</p>` : ''}
+                </div>
+              `;
+            }
+          });
+
+          // Middle Column
+          const middlePost = getPostById(movieMiddleColumnId);
+          if (middlePost) {
+            middleContainer.innerHTML = `
+              <div class="post-list">
+                <a href="/${middlePost.slug}">
+                  <img src="${middlePost.image}" alt="${middlePost.title}" class="img-fluid">
+                </a>
+                <div class="post-meta">
+                  <span class="date">${middlePost.category}</span>
+                  <span class="mx-1">•</span>
+                  <span>${middlePost.date}</span>
+                </div>
+                <h2 class="mb-2"><a href="/${middlePost.slug}">${middlePost.title}</a></h2>
+                <span class="author mb-3 d-block" style="visibility:hidden;">&nbsp;</span>
+                <p class="mb-4 d-block">${middlePost.summary || ''}</p>
+              </div>
+            `;
+          }
+
+          // Right Sidebar
+          movieRightPostIds.forEach(id => {
+            const post = getPostById(id);
+            if (post) {
+              rightContainer.innerHTML += `
+                <div class="post-list border-bottom">
+                  <div class="post-meta">
+                    <span class="date">${post.category}</span>
+                    <span class="mx-1">•</span>
+                    <span>${post.date}</span>
+                  </div>
+                  <h2 class="mb-2"><a href="/${post.slug}">${post.title}</a></h2>
+                  <span class="author mb-3 d-block" style="visibility:hidden;">&nbsp;</span>
+                </div>
+              `;
+            }
+          });
+
+        } catch (error) {
+          console.error('Error loading movie section:', error);
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', loadmovieSection);
+    </script>
+
+
+    <script>
+      const musicMainPostId = 22;
+      const musicLeftExtraIds = [23, 24]; // Below main post in left column
+      const musicMiddleColOneIds = [25, 26, 27];
+      const musicMiddleColTwoIds = [28, 29, 30];
+      const musicRightColumnIds = [31, 11, 12, 13, 14, 15];
+
+      async function loadmusicSection() {
+        try {
+          const response = await fetch('posts.json');
+          const posts = await response.json();
+          const getPostById = (id) => posts.find(post => post.id === id);
+
+          // Containers
+          const leftContainer = document.getElementById('musicLeftColumn');
+          const midColOne = document.getElementById('musicMiddleColumnOne');
+          const midColTwo = document.getElementById('musicMiddleColumnTwo');
+          const rightContainer = document.getElementById('musicRightColumn');
+
+          leftContainer.innerHTML = '';
+          midColOne.innerHTML = '';
+          midColTwo.innerHTML = '';
+          rightContainer.innerHTML = '';
+
+          // Left Column - Main Post
+          const mainPost = getPostById(musicMainPostId);
+          if (mainPost) {
+            leftContainer.innerHTML += `
+              <div class="post-list lg">
+                <a href="/${mainPost.slug}">
+                  <img src="${mainPost.image}" alt="${mainPost.title}" class="img-fluid">
+                </a>
+                <div class="post-meta">
+                  <span class="date">${mainPost.category}</span>
+                  <span class="mx-1">•</span>
+                  <span>${mainPost.date}</span>
+                </div>
+                <h2><a href="/${mainPost.slug}">${mainPost.title}</a></h2>
+                <p class="mb-4 d-block">${mainPost.summary || ''}</p>
+                <div class="d-flex align-items-center author" style="visibility:hidden;">
+                  <div class="photo"><img src="assets/img/person-placeholder.jpg" alt="" class="img-fluid"></div>
+                  <div class="name"><h3 class="m-0 p-0">&nbsp;</h3></div>
+                </div>
+              </div>
+            `;
+          }
+
+          // Left Column - Extra Posts
+          musicLeftExtraIds.forEach(id => {
+            const post = getPostById(id);
+            if (post) {
+              leftContainer.innerHTML += `
+                <div class="post-list border-bottom">
+                  <div class="post-meta">
+                    <span class="date">${post.category}</span>
+                    <span class="mx-1">•</span>
+                    <span>${post.date}</span>
+                  </div>
+                  <h2 class="mb-2"><a href="/${post.slug}">${post.title}</a></h2>
+                  <span class="author mb-3 d-block" style="visibility:hidden;">&nbsp;</span>
+                </div>
+              `;
+            }
+          });
+
+          // Middle Column One
+          musicMiddleColOneIds.forEach(id => {
+            const post = getPostById(id);
+            if (post) {
+              midColOne.innerHTML += `
+                <div class="post-list">
+                  <a href="/${post.slug}">
+                    <img src="${post.image}" alt="${post.title}" class="img-fluid">
+                  </a>
+                  <div class="post-meta">
+                    <span class="date">${post.category}</span>
+                    <span class="mx-1">•</span>
+                    <span>${post.date}</span>
+                  </div>
+                  <h2><a href="/${post.slug}">${post.title}</a></h2>
+                </div>
+              `;
+            }
+          });
+
+          // Middle Column Two
+          musicMiddleColTwoIds.forEach(id => {
+            const post = getPostById(id);
+            if (post) {
+              midColTwo.innerHTML += `
+                <div class="post-list">
+                  <a href="/${post.slug}">
+                    <img src="${post.image}" alt="${post.title}" class="img-fluid">
+                  </a>
+                  <div class="post-meta">
+                    <span class="date">${post.category}</span>
+                    <span class="mx-1">•</span>
+                    <span>${post.date}</span>
+                  </div>
+                  <h2><a href="/${post.slug}">${post.title}</a></h2>
+                </div>
+              `;
+            }
+          });
+
+          // Right Column Posts
+          musicRightColumnIds.forEach(id => {
+            const post = getPostById(id);
+            if (post) {
+              rightContainer.innerHTML += `
+                <div class="post-list border-bottom">
+                  <div class="post-meta">
+                    <span class="date">${post.category}</span>
+                    <span class="mx-1">•</span>
+                    <span>${post.date}</span>
+                  </div>
+                  <h2 class="mb-2"><a href="/${post.slug}">${post.title}</a></h2>
+                  <span class="author mb-3 d-block" style="visibility:hidden;">&nbsp;</span>
+                </div>
+              `;
+            }
+          });
+
+        } catch (error) {
+          console.error('Error loading music section:', error);
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', loadmusicSection);
+    </script>
+
+
+</body>
+
+</html>
